@@ -1,10 +1,9 @@
-def removeOddNumbers(numbers):
-    for id, number in enumerate(numbers):
-        print(f'id = {id}')
-        if number % 2: # jos pariton
-            print('pariton löytyi')
-            del numbers[id]
-    return numbers
+def getOddNumbers(numbers):
+    evenNumbers = []
+    for number in numbers:
+        if number % 2 == 0: # jos parillinen
+            evenNumbers.append(number)
+    return evenNumbers
 
 # kysytään kokonaislukuja
 originalList = []
@@ -22,5 +21,7 @@ while text_input != '':
     text_input = input(f'{list_index}: ')
 
 # annetaan lista funktiolle, joka poistaa parittomat luvut
-strippedList = removeOddNumbers(originalList)
-print(strippedList)
+strippedList = getOddNumbers(originalList)
+print()
+print(f'Alkuperäinen:\t{originalList}')
+print(f'Karsittu:\t{strippedList}')
